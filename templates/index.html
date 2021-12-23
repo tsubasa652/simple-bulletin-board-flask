@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>シンプルな掲示板</title>
+  </head>
+  <body>
+    <form action="post" method="POST">
+      <div>
+        <label>名前：</label>
+        <input type="text" name="name">
+      </div>
+      <div>
+        <label>本文：</label>
+        <textarea name="body"></textarea>
+      </div>
+      <input type="submit" value="投稿　">
+    </form>
+    {% for post in posts%}
+      <p>{{post["name"]}} {{post["time"]}}</p>
+      <p>{{post["body"]}}</p>
+    {% endfor %}
+  </body>
+</html>
